@@ -9,7 +9,163 @@
     <title>Business Profits Calculator</title>
 </head>
 <body>
-    <h1>Hello there</h1>
+    <section class="first-section">
+        <div class="wrapper mx-4 my-3">
+            <div class="calculator d-flex flex-column py-2">
+                <div class="calculator-header d-flex justify-content-center align-content-center">
+                    <div class="spinner-grow align-self-center" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                      </div>
+                    <h1 class="p-4">My Business Calculator</h1>
+                    <div class="spinner-grow align-self-center" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                      </div>
+                </div>
+                <form action="calculate" method="post" id="calculate">
+                    <div class="amazonUs">
+                        <h2 class="text-center pb-3">Amazon US</h2>
+                        <div class="field row mx-5 pb-2">
+                            <label class="col-form-label col-sm-9" for="amazonUsPaymentDollar">Enter the Amazon US Payment in Dollars $</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="number" id="amazonUsPaymentDollar" name="amazonUsPaymentDollar" placeholder="ex. $1025">
+                            </div>
+                        </div>
+                        <div class="field row mx-5 pb-2">
+                            <label class="col-form-label col-sm-9" for="amazonUsPaymentPound">Enter the Amazon US Payment in Pounds £</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="number" id="amazonUsPaymentPound" name="amazonUsPaymentPound" placeholder="ex. £8500">
+                            </div>
+                        </div>
+                        <div class="field row mx-5 pb-2">
+                            <label class="col-form-label col-sm-9" for="aslanAmazonUsPayment">Enter Aslan's Payment in $</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="number" id="aslanAmazonUsPayment" name="aslanAmazonUsPayment" placeholder="ex. $4000">
+                            </div>
+                        </div>
+                        <div class="field row mx-5 pb-2">
+                            <label class="col-form-label col-sm-9" for="roslanAmazonUsPayment">Enter Roslan's Payment in $</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="number" id="roslanAmazonUsPayment" name="roslanAmazonUsPayment" placeholder="ex. $4000">
+                            </div>
+                        </div>
+                        <div class="field row mx-5 pb-3">
+                            <label class="col-form-label col-sm-9" for="combinedAmazonUsPayment">Enter Combined Payment in $</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="number" id="combinedAmazonUsPayment" name="combinedAmazonUsPayment" placeholder="ex. $2012">
+                            </div>
+                        </div>
+                        <div class="result mx-5  p-3 mb-5">
+                            <p class="mb-2">Aslan's Amazon US Payment in Pounds = <span id="aslanAmazonUsPoundTotal">£0</span></p>
+                            <p>Roslan's Amazon US Payment in Pounds = <span id="roslanAmazonUsPoundTotal">£0</span></p>
+                        </div>
+                    </div>
+                    <div class="amazonCa">
+                        <h2 class="text-center pb-3">Amazon CA</h2>
+                        <div class="field row mx-5 pb-2">
+                            <label class="col-form-label col-sm-9" for="amazonCaPaymentDollar">Enter the Amazon CA Payment in Dollars $</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="number" id="amazonCaPaymentDollar" name="amazonCaPaymentDollar" placeholder="ex. $1025">
+                            </div>
+                        </div>
+                        <div class="field row mx-5 pb-2">
+                            <label class="col-form-label col-sm-9" for="amazonCaPaymentPound">Enter the Amazon CA Payment in Pounds £</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="number" id="amazonCaPaymentPound" name="amazonCaPaymentPound" placeholder="ex. £8500">
+                            </div>
+                        </div>
+                        <div class="field row mx-5 pb-2">
+                            <label class="col-form-label col-sm-9" for="aslanAmazonCaPayment">Enter Aslan's Payment in $</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="number" id="aslanAmazonCaPayment" name="aslanAmazonCaPayment" placeholder="ex. $4000">
+                            </div>
+                        </div>
+                        <div class="field row mx-5 pb-2">
+                            <label class="col-form-label col-sm-9" for="roslanAmazonCaPayment">Enter Roslan's Payment in $</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="number" id="roslanAmazonCaPayment" name="roslanAmazonCaPayment" placeholder="ex. $4000">
+                            </div>
+                        </div>
+                        <div class="field row mx-5 pb-3">
+                            <label class="col-form-label col-sm-9" for="combinedAmazonCaPayment">Enter Combined Payment in $</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="number" id="combinedAmazonCaPayment" name="combinedAmazonCaPayment" placeholder="ex. $2012">
+                            </div>
+                        </div>
+                        <div class="result mx-5  p-3 mb-5">
+                            <p class="mb-2">Aslan's Amazon CA Payment in Pounds = <span id="aslanAmazonCaPoundTotal">£0</span></p>
+                            <p>Roslan's Amazon CA Payment in Pounds = <span id="roslanAmazonCaPoundTotal">£0</span></p>
+                        </div>
+                    </div>
+                    <div class="amazonUk">
+                        <h2 class="text-center pb-3">Amazon UK</h2>
+                        <div class="field row mx-5 pb-2">
+                            <label class="col-form-label col-sm-9" for="amazonUKPaymentPound">Enter the Amazon UK Payment in Pounds £</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="number" id="amazonUKPaymentPound" name="amazonUKPaymentPound" placeholder="ex. £1025">
+                            </div>
+                        </div>
+                        <div class="field row mx-5 pb-2">
+                            <label class="col-form-label col-sm-9" for="aslanAmazonUKPayment">Enter Aslan's Payment in £</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="number" id="aslanAmazonUKPayment" name="aslanAmazonUKPayment" placeholder="ex. £4000">
+                            </div>
+                        </div>
+                        <div class="field row mx-5 pb-2">
+                            <label class="col-form-label col-sm-9" for="roslanAmazonUKPayment">Enter Roslan's Payment in £</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="number" id="roslanAmazonUKPayment" name="roslanAmazonUKPayment" placeholder="ex. £4000">
+                            </div>
+                        </div>
+                        <div class="field row mx-5 pb-3">
+                            <label class="col-form-label col-sm-9" for="combinedAmazonUKPayment">Enter Combined Payment in £</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="number" id="combinedAmazonUKPayment" name="combinedAmazonUKPayment" placeholder="ex. £2012.5">
+                            </div>
+                        </div>
+                        <div class="result mx-5  p-3 mb-5">
+                            <p class="mb-2">Aslan's Amazon UK Payment in Pounds = <span id="aslanAmazonUkPoundTotal">£0</span></p>
+                            <p>Roslan's Amazon UK Payment in Pounds = <span id="roslanAmazonUkPoundTotal">£0</span></p>
+                        </div>
+                    </div>
+                    <div class="youtube">
+                        <h2 class="text-center pb-3">Youtube</h2>
+                        <div class="field row mx-5 pb-2">
+                            <label class="col-form-label col-sm-9" for="youtubePaymentDollar">Enter the Youtube Payment in Dollars $</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="number" id="youtubePaymentDollar" name="youtubePaymentDollar" placeholder="ex. $1025">
+                            </div>
+                        </div>
+                        <div class="field row mx-5 pb-2">
+                            <label class="col-form-label col-sm-9" for="youtubePaymentPound">Enter the Youtube Payment in Pounds £</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="number" id="youtubePaymentPound" name="youtubePaymentPound" placeholder="ex. £8500">
+                            </div>
+                        </div>
+                        <div class="field row mx-5 pb-2">
+                            <label class="col-form-label col-sm-9" for="aslanYoutubeDollarPayment">Enter Aslan's Payment in $</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="number" id="aslanYoutubeDollarPayment" name="aslanYoutubeDollarPayment" placeholder="ex. $4000">
+                            </div>
+                        </div>
+                        <div class="field row mx-5 pb-2">
+                            <label class="col-form-label col-sm-9" for="roslanYoutubeDollarPayment">Enter Roslan's Payment in $</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="number" id="roslanYoutubeDollarPayment" name="roslanYoutubeDollarPayment" placeholder="ex. $4000">
+                            </div>
+                        </div>
+                        <div class="result mx-5  p-3 mb-5">
+                            <p class="mb-2">Aslan's Youtube Payment in Pounds = <span id="aslanYoutubePoundTotal">£0</span></p>
+                            <p>Roslan's Youtube Payment in Pounds = <span id="roslanYoutubePoundTotal">£0</span></p>
+                        </div>
+                    </div>
+                    <div class="submit-button-container d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary" id="submitButton">Submit Form</button>
+                    </div>       
+                </form>
+                        
+            </div>
+        </div>
+    </section>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="app.js"></script>
 </body>

@@ -1,0 +1,81 @@
+:root {
+    --dark-blue: #1d3557;
+    --medium-blue: #457b9d;
+    --light-blue: #a8dadc;
+    --off-white: #f1faee;
+    --darker-off-white: #d8e0d5;
+    --fancy-red: #e63946;
+    --transparent-fancy-red: rgba(243, 57, 57, 0.892);
+}
+
+body {
+    background-color: var(--off-white);
+}
+.first-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.calculator {
+    margin-top: 50px;
+    width: 100%;
+    background-color: var(--light-blue);
+    border-radius: 20px;
+}
+
+.spinner-grow {
+    color: var(--dark-blue);
+}
+
+.h1 {
+    color: var(--dark-blue);
+}
+
+.amazonUs .result {
+    background-color: var(--fancy-red);
+}
+.result {
+    border-radius: 10px;
+}
+.amazonCa .result {
+    background-color: var(--medium-blue);
+}
+.amazonUk .result {
+    background-color: var(--dark-blue);
+}
+
+.youtube .result {
+    background-color: var(--fancy-red);
+}
+.result p {
+    color: var(--off-white);
+    padding: 0px;
+    margin: 0px;
+}
+
+#submitButton {
+    margin-bottom: 50px;
+    padding: 25px 50px;
+    background-color: var(--dark-blue);
+    border-color: var(--off-white);
+}
+#submitButton:hover {
+    background-color: var(--off-white);
+    color: var(--dark-blue);
+    border-color: var(--medium-blue);
+}
+#submitButton:active {
+    background-color: var(--darker-off-white);
+    box-shadow: 0px 0px 0px 4px var(--transparent-fancy-red); 
+}
+#submitButton:focus {
+    
+    box-shadow: 0px 0px 0px 5px var(--medium-blue); 
+}
+
