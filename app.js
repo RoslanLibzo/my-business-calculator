@@ -123,7 +123,7 @@ calculatorForm.addEventListener("submit", function (event){
         amazonEuPerPerson = parseInt(amazonEu.value) / 2
         // Final Calculations of Each Person's Profits
         aslanIncome = await parseInt(aslanYoutubePayment) + parseInt(aslanUkPayment) + parseInt(aslanCaPayment) + parseInt(aslanUsPayment) - parseInt(businessTax.value/2) + amazonEuPerPerson;
-        roslanIncome = await parseInt(roslanYoutubePayment) + parseInt(aslanUkPayment) + parseInt(aslanCaPayment) + parseInt(aslanUsPayment) - parseInt(businessTax.value/2) + amazonEuPerPerson;
+        roslanIncome = await parseInt(roslanYoutubePayment) + parseInt(roslanUkPayment) + parseInt(roslanCaPayment) + parseInt(roslanUsPayment) - parseInt(businessTax.value/2) + amazonEuPerPerson;
         aslanTotalIncome.innerText = "£" + aslanIncome
         roslanTotalIncome.innerText = "£" + roslanIncome
         }
@@ -135,62 +135,64 @@ window.jsPDF = window.jspdf.jsPDF
 function pdfExport(){
   const doc = new jsPDF();
   doc.setFontSize(12);
-  doc.text("Monthly Business Accounts for Luigi's Product reviews produced on date: " + dateOfPayment.value, 15, 15)
+  doc.text("Monthly Business Accounts for Luigi's Product reviews produced on date: " + dateOfPayment.value, 15, 20);
   doc.setFontSize(10);
   doc.text("Amazon Date-Range of Earnings Used for This Reciept: " + amazonRangeDate.value, 20, 30);
   doc.text("Youtube Date-Range of Earnings Used for this Reciept: " + youtubeRangeDate.value, 20, 35);
-  doc.text("Amazon US Payment in Dollars: $" + amazonUsPaymentDollar.value, 20, 45);
-  doc.text("Amazon US Payment in Pounds: £" + amazonUsPaymentPound.value, 20, 50);
-  doc.text("Amazon US Conversion Rate: " + amazonUsConversion, 20, 55);
+  doc.text("______________________________________________________________________________", 25, 38);
+  doc.text("Amazon US Payment in Dollars: $" + amazonUsPaymentDollar.value, 30, 45);
+  doc.text("Amazon US Payment in Pounds: £" + amazonUsPaymentPound.value, 30, 50);
+  doc.text("Amazon US Conversion Rate: " + amazonUsConversion, 30, 55);
   doc.text("Aslan's Payment In Dollars $" + aslanAmazonUsPayment.value, 20, 65);
   doc.text("Roslan's Payment In Dollars $" + roslanAmazonUsPayment.value, 20, 70);
   doc.text("Combined Payment In Dollars $" + combinedAmazonUsPayment.value, 20, 75);
-  doc.text("Aslan's Payment In Pounds £" + parseInt(aslanUsPaymentPound), 20, 85);
-  doc.text("Roslan's Payment In Pounds £" + parseInt(roslanUsPaymentPound), 20, 90);
-  doc.text("Combined Payment In Pounds £" + parseInt(usCombinedPayment), 20, 95);
+  doc.text("Aslan's Payment In Pounds £" + parseInt(aslanUsPaymentPound), 120, 65);
+  doc.text("Roslan's Payment In Pounds £" + parseInt(roslanUsPaymentPound), 120, 70);
+  doc.text("Combined Payment In Pounds £" + parseInt(usCombinedPayment), 120, 75);
   doc.setTextColor(139, 0, 0);
-  doc.text("Aslan's Amazon US Payment in Pounds + Combined Payment £" + parseInt(aslanUsPayment), 20, 105);
-  doc.text("Roslan's Amazon US Payment in Pounds + Combined Payment £" + parseInt(roslanUsPayment), 20, 110);
+  doc.text("Aslan's Amazon US Payment in Pounds + Combined Payment £" + parseInt(aslanUsPayment), 25, 85);
+  doc.text("Roslan's Amazon US Payment in Pounds + Combined Payment £" + parseInt(roslanUsPayment), 25, 90);
   doc.setTextColor(0, 0, 0);
-  doc.text("Amazon CA Payment in CA Dollar $" + amazonCaPaymentDollar.value, 20, 120);
-  doc.text("Amazon CA Payment in Pounds £" + amazonCaPaymentPound.value, 20, 125);
-  doc.text("Amazon CA Conversion Rate: " + amazonCaConversion, 20, 130);
-  doc.text("Aslan's Payment in Dollars CA $" + aslanAmazonCaPayment.value, 20, 140);
-  doc.text("Roslan's Payment in Dollars CA $" + roslanAmazonCaPayment.value, 20, 145);
-  doc.text("Combined Payment in Dollars CA $" + combinedAmazonCaPayment.value, 20, 150);
-  doc.text("Aslan's Payment in Pounds £" + parseInt(aslanCaPaymentPound), 20, 160);
-  doc.text("Roslan's Payment in Pounds £" + parseInt(roslanCaPaymentPound), 20, 165);
-  doc.text("Combined Payment In Pounds £" + parseInt(caCombinedPayment), 20, 170);
+  doc.text("--------------------------------------------------------------------------------------------------------------------------------", 25, 95);
+  doc.text("Amazon CA Payment in CA Dollar $" + amazonCaPaymentDollar.value, 20, 100);
+  doc.text("Amazon CA Payment in Pounds £" + amazonCaPaymentPound.value, 20, 105);
+  doc.text("Amazon CA Conversion Rate: " + amazonCaConversion, 20, 110);
+  doc.text("Aslan's Payment in Dollars CA $" + aslanAmazonCaPayment.value, 20, 120);
+  doc.text("Roslan's Payment in Dollars CA $" + roslanAmazonCaPayment.value, 20, 125);
+  doc.text("Combined Payment in Dollars CA $" + combinedAmazonCaPayment.value, 20, 130);
+  doc.text("Aslan's Payment in Pounds £" + parseInt(aslanCaPaymentPound), 120, 120);
+  doc.text("Roslan's Payment in Pounds £" + parseInt(roslanCaPaymentPound), 120, 125);
+  doc.text("Combined Payment In Pounds £" + parseInt(caCombinedPayment), 120, 130);
   doc.setTextColor(0, 0, 130);
-  doc.text("Aslan's Amazon CA Payment in Pounds + Combined Payment £" + parseInt(aslanCaPayment), 20, 180);
-  doc.text("Roslan's Amazon CA Payment in Pounds + Combined Payment £" + parseInt(roslanCaPayment), 20, 185);
+  doc.text("Aslan's Amazon CA Payment in Pounds + Combined Payment £" + parseInt(aslanCaPayment), 25, 140);
+  doc.text("Roslan's Amazon CA Payment in Pounds + Combined Payment £" + parseInt(roslanCaPayment), 25, 145);
   doc.setTextColor(0, 0, 0);
-  doc.text("Amazon UK Payment in Pounds: £" + amazonUkPaymentPound.value, 20, 195);
-  doc.text("Aslan's Amazon UK Payment in Pounds £" + aslanAmazonUkPayment.value, 20, 200);
-  doc.text("Roslan's Amazon UK Payment in Pounds £" + roslanAmazonUkPayment.value, 20, 205);
-  doc.text("Roslan and Aslan Combined Amazon Payment £" + parseInt(ukCombinedPayment), 20, 210);
+  doc.text("--------------------------------------------------------------------------------------------------------------------------------", 25, 150);
+  doc.text("Amazon UK Payment in Pounds: £" + amazonUkPaymentPound.value, 20, 155);
+  doc.text("Aslan's Amazon UK Payment in Pounds £" + aslanAmazonUkPayment.value, 20, 160);
+  doc.text("Roslan's Amazon UK Payment in Pounds £" + roslanAmazonUkPayment.value, 20, 165);
+  doc.text("Roslan and Aslan Combined Amazon Payment £" + parseInt(ukCombinedPayment), 20, 170);
   doc.setTextColor(0, 139, 0);
-  doc.text("Aslan's Amazon UK Payment Total With Combined: £" + parseInt(aslanUkPayment), 20, 215);
-  doc.text("Roslan's Amazon UK Payment Total With Combined: £" + parseInt(roslanUkPayment), 20, 220);
+  doc.text("Aslan's Amazon UK Payment Total With Combined: £" + parseInt(aslanUkPayment), 25, 180);
+  doc.text("Roslan's Amazon UK Payment Total With Combined: £" + parseInt(roslanUkPayment), 25, 185);
   doc.setTextColor(0, 0, 0);
-  doc.text("Youtube Payment in Dollars $" + youtubePaymentDollar.value, 20, 230);
-  doc.text("Youtube Payment in Pounds £" + youtubePaymentPound.value , 20, 235);
-  doc.text("Youtube Conversion Rate : " + youtubeConversion, 20, 240);
-  doc.text("Aslan's Youtube Payment Dollars $" + aslanYoutubeDollarPayment.value, 20, 245);
-  doc.text("Roslan's Youtube Payment Dollars $" + roslanYoutubeDollarPayment.value , 20, 250);
+  doc.text("--------------------------------------------------------------------------------------------------------------------------------", 25, 190);
+  doc.text("Youtube Payment in Dollars $" + youtubePaymentDollar.value, 20, 195);
+  doc.text("Youtube Payment in Pounds £" + youtubePaymentPound.value , 20, 200);
+  doc.text("Youtube Conversion Rate : " + youtubeConversion, 20, 205);
+  doc.text("Aslan's Youtube Payment Dollars $" + aslanYoutubeDollarPayment.value, 20, 215);
+  doc.text("Roslan's Youtube Payment Dollars $" + roslanYoutubeDollarPayment.value , 20, 220);
   doc.setTextColor(139, 0, 0);
-  doc.text("Aslan's Youtube Payment Pounds £" + parseInt(aslanYoutubePayment), 20, 255);
-  doc.text("Roslan's Youtube Payment Pounds £" + parseInt(roslanYoutubePayment), 20, 260);
+  doc.text("Aslan's Youtube Payment Pounds £" + parseInt(aslanYoutubePayment), 120, 215);
+  doc.text("Roslan's Youtube Payment Pounds £" + parseInt(roslanYoutubePayment), 120, 220);
   doc.setTextColor(0, 0, 0);
-  doc.text("Business Tax in Pound (Deduct half from each person) £"+ businessTax.value, 20, 265);
-  doc.text("Amazon EU's Total Payment (Half of this to each Person) £" + amazonEu.value, 20, 270);
+  doc.text("--------------------------------------------------------------------------------------------------------------------------------", 25, 225);
+  doc.text("Business Tax in Pound (Deduct half from each person) £"+ businessTax.value, 20, 235);
+  doc.text("Amazon EU's Total Payment (Half of this to each Person) £" + amazonEu.value, 20, 240);
   doc.setTextColor(100, 0, 0);
-  doc.text("Aslan's Payment Total in Pound £" + parseInt(aslanIncome), 20, 275);
-  doc.text("Roslan's Payment Total in Pound £" + parseInt(roslanIncome), 20, 280);
-
-
-  
-
-
-  doc.save("Reciept.pdf")
+  doc.setFontSize(12);
+  doc.text("___________________________________________________________________________", 15, 243);
+  doc.text("Aslan's Payment Total in Pound £" + parseInt(aslanIncome), 20, 255);
+  doc.text("Roslan's Payment Total in Pound £" + parseInt(roslanIncome), 20, 265);
+  doc.save(dateOfPayment.value + " Payment Reciept.pdf");
 }
