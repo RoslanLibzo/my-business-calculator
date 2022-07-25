@@ -135,12 +135,10 @@ window.jsPDF = window.jspdf.jsPDF
 function pdfExport(){
   const doc = new jsPDF();
   doc.setFontSize(12);
-  doc.setFont('bold');
   doc.text("Monthly Business Accounts for Luigi's Product reviews produced on date: " + dateOfPayment.value, 15, 15)
   doc.setFontSize(10);
   doc.text("Amazon Date-Range of Earnings Used for This Reciept: " + amazonRangeDate.value, 20, 30);
   doc.text("Youtube Date-Range of Earnings Used for this Reciept: " + youtubeRangeDate.value, 20, 35);
-  doc.setFont('normal');
   doc.text("Amazon US Payment in Dollars: $" + amazonUsPaymentDollar.value, 20, 45);
   doc.text("Amazon US Payment in Pounds: £" + amazonUsPaymentPound.value, 20, 50);
   doc.text("Amazon US Conversion Rate: " + amazonUsConversion, 20, 55);
