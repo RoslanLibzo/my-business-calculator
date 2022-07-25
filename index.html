@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="app.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <title>Business Profits Calculator</title>
 </head>
 <body>
@@ -22,6 +23,35 @@
                       </div>
                 </div>
                 <form action="calculate" method="post" id="calculate" class="needs-validation" novalidate>
+                    <div class="dates">
+                        <div class="field row mx-5 pb-2">
+                            <label class="col-form-label col-md-6" for="dateOfPayment">Enter the Date of the Payments reciept</label>
+                            <div class="col-md-6">
+                                <input class="form-control" type="text" id="dateOfPayment" name="dateOfPayment" placeholder="ex. 03/07/2022" required>
+                                <div class="invalid-feedback">
+                                    Enter Number.
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="field row mx-5 pb-2">
+                            <label class="col-form-label col-md-6" for="amazonRangeDate">Enter the Date range from Amazon</label>
+                            <div class="col-md-6">
+                                <input class="form-control" type="text" id="amazonRangeDate" name="amazonRangeDate" placeholder="ex. March-2022 to April-2022" required>
+                                <div class="invalid-feedback">
+                                    Enter Number.
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="field row mx-5 pb-5">
+                            <label class="col-form-label col-md-6" for="youtubeRangeDate">Enter the Date range from Youtube</label>
+                            <div class="col-md-6">
+                                <input class="form-control" type="text" id="youtubeRangeDate" name="youtubeRangeDate" placeholder="ex. March-2022 to April-2022" required>
+                                <div class="invalid-feedback">
+                                    Enter Number.
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="amazonUs">
                         <h2 class="text-center pb-3">Amazon US</h2>
                         <div class="field row mx-5 pb-2">
@@ -212,15 +242,42 @@
                             <p>Roslan's Youtube Payment in Pounds = <span id="roslanYoutubePoundTotal">£0</span></p>
                         </div>
                     </div>
+                    <div class="field row mx-5 pb-2">
+                        <label class="col-form-label col-sm-9" for="businessTax">Enter Total Tax on Profits for Business Subscriptions and payments in (Will deduct Half of this value from Each Person) £</label>
+                        <div class="col-sm-3">
+                            <input class="form-control" type="number" id="businessTax" name="businessTax" placeholder="ex. £100" required>
+                            <div class="invalid-feedback">
+                                Enter Number.
+                              </div>
+                        </div>
+                    </div>
+                    <div class="field row mx-5 pb-2">
+                        <label class="col-form-label col-sm-9" for="amazonEu">Enter Amazon EU Payments in Pounds £</label>
+                        <div class="col-sm-3">
+                            <input class="form-control" type="number" id="amazonEu" name="amazonEu" placeholder="ex. £100" required>
+                            <div class="invalid-feedback">
+                                Enter Number.
+                              </div>
+                        </div>
+                    </div>
+                    <div class="total-income">
+                        <div class="result mx-5  p-3 mb-5">
+                            <p class="mb-2">Aslan's Total Income / Payment = <span id="aslanTotalIncome">£0</span></p>
+                            <p>Roslan's Total Income / Payment = <span id="roslanTotalIncome">£0</span></p>
+                        </div>
+                    </div>
                     <div class="submit-button-container d-flex justify-content-center">
                         <button type="submit" class="btn btn-primary" id="submitButton">Submit Form</button>
                     </div>       
                 </form>
+                <a href="javascript:pdfExport();">Export PDF</a>
                         
             </div>
         </div>
     </section>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    
     <script src="app.js"></script>
 </body>
 </html>

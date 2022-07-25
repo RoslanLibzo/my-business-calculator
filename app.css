@@ -53,6 +53,9 @@ body {
 .youtube .result {
     background-color: var(--fancy-red);
 }
+.total-income .result {
+    background-color: var(--dark-blue);
+}
 .result p {
     color: var(--off-white);
     padding: 0px;
